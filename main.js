@@ -35,8 +35,8 @@ function gotPoses(results) {
         scoreLeftWrist = results[0].pose.keypoints[9].score;
         console.log("scoreRightWrist = " + scoreRightWrist + "scoreLeftWrist = " + scoreLeftWrist);
 
-        leftWristX = results[0].pose.leftWrist.x - 30;
-        leftWristY = results[0].pose.leftWrist.y - 50;
+        leftWristX = results[0].pose.leftWrist.x;
+        leftWristY = results[0].pose.leftWrist.y - 30;
         console.log("leftWristX = " + leftWristX + "leftWristY = " + leftWristY);
 
         rightWristX = results[0].pose.rightWrist.x;
@@ -79,7 +79,7 @@ function draw() {
         song.rate(2);
     }
 
-    else if (rightWristY >400 && rightWristY <= 500)
+    else if (rightWristY >400)
     {
         document.getElementById("speed").innerHTML = "Speed = 2.5x";
         song.rate(2.5);
